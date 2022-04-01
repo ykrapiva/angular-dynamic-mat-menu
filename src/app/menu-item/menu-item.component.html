@@ -1,21 +1,27 @@
+<!-- First line menu items -->
 <ng-container *ngIf="root">
+    <!-- Expandable items -->
     <ng-container *ngIf="hasChildren()">
         <button mat-button [matMenuTriggerFor]="menu">{{item.displayName}}</button>
         <mat-menu #menu="matMenu">
             <app-menu-item *ngFor="let item of getChildren()" [item]="item" [root]=false></app-menu-item>
         </mat-menu>
     </ng-container>
+    <!-- Non-expandable items -->
     <ng-container *ngIf="!hasChildren()">
         <button mat-button>{{item.displayName}}</button>
     </ng-container>
 </ng-container>
+<!-- Nested menu items -->
 <ng-container *ngIf="!root">
+    <!-- Expandable items -->
     <ng-container *ngIf="hasChildren()">
         <button mat-menu-item [matMenuTriggerFor]="childMenu">{{item.displayName}}</button>
         <mat-menu #childMenu="matMenu">
             <app-menu-item *ngFor="let item of getChildren()" [item]="item" [root]=false></app-menu-item>
         </mat-menu>
     </ng-container>
+    <!-- Non-expandable items -->
     <ng-container *ngIf="!hasChildren()">
         <button mat-menu-item>{{item.displayName}}</button>
     </ng-container>

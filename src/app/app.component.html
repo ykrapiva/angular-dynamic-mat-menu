@@ -1,20 +1,20 @@
 <div>
-  <mat-toolbar color="primary">
-    <button mat-button [matMenuTriggerFor]="first">This menu works, and below one doesn't</button>
-    <mat-menu #first="matMenu">
-      <button mat-menu-item [matMenuTriggerFor]="second">Menu Item 1</button>
-      <mat-menu #second="matMenu">
-        <button mat-menu-item>Menu Item 3</button>
-        <button mat-menu-item [matMenuTriggerFor]="third">Menu Item 4</button>
-        <mat-menu #third="matMenu">
-          <button mat-menu-item>Menu Item 5</button>
-          <button mat-menu-item>Menu Item 6</button>
+    <mat-toolbar color="primary">
+        <button mat-button [matMenuTriggerFor]="first">This menu works, and below one doesn't</button>
+        <mat-menu #first="matMenu">
+            <button mat-menu-item [matMenuTriggerFor]="second">Menu Item 1</button>
+            <mat-menu #second="matMenu">
+                <button mat-menu-item>Menu Item 3</button>
+                <button mat-menu-item [matMenuTriggerFor]="third">Menu Item 4</button>
+                <mat-menu #third="matMenu">
+                    <button mat-menu-item>Menu Item 5</button>
+                    <button mat-menu-item>Menu Item 6</button>
+                </mat-menu>
+            </mat-menu>
         </mat-menu>
-      </mat-menu>
-    </mat-menu>
-  </mat-toolbar>
+    </mat-toolbar>
 
-  <mat-toolbar color="warn">
-    <app-menu-item *ngFor="let item of navItems" [item]="item" [root]="true"></app-menu-item>
-  </mat-toolbar>
+    <mat-toolbar color="warn">
+        <app-menu-item *ngFor="let item of navItems" [item]="item" [root]="true"></app-menu-item>
+    </mat-toolbar>
 </div>
